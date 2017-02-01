@@ -1,0 +1,4 @@
+https://www.asp.net/mvc/overview
+https://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
+Continue on
+https://www.asp.net/mvc/overview/getting-started/introduction/adding-a-model
