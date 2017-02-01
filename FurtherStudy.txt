@@ -1,0 +1,237 @@
+Recommendation from last results:
+
+https://www.asp.net/mvc/overview
+http://www.tutorialsteacher.com/online-test/mvc-test  Test?
+
+1) Design and implement claims-based authentication across federated identity stores. This
+objective may include but is not limited to: implement federated authentication by using
+Azure Access Control Service; create a custom security token by using Windows Identity
+Foundation; handle token formats (for example, oAuth, OpenID, LiveID, Facebook) for
+SAML and SWT tokens
+
+2) Design and implement Azure role lifecycle. This objective may include but is not limited
+to: identify and implement Start, Run, Stop events; Identify Startup tasks (IIS
+configuration (app pool), registry config, third party tools)
+
+3) Configure state management. This objective may include but is not limited to: choose a
+state management mechanism (in-process and out of process state management,
+ViewState); plan for scalability; use cookies or local storage to maintain state; apply
+configuration settings in web.config file; implement sessionless state (for example,
+QueryString)
+
+
+Partial Created List, (created after the second try)   Need a tutorial/hands-on labs
+1) IClaims/IPrincipal?
+   - claims.Type?
+   - claims.Value?
+2) SQLMembership provider configuration
+    <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="15">
+      <providers>
+        <clear />
+        <add 
+          name="SqlProvider"                                    
+          type="System.Web.Security.SqlMembershipProvider"     <!-- Important -->
+          connectionStringName="MySqlConnection"               <!-- Important -->
+          applicationName="MyApplication"
+          enablePasswordRetrieval="false"
+          enablePasswordReset="true"
+          requiresQuestionAndAnswer="true"
+          requiresUniqueEmail="true"
+          passwordFormat="Hashed" />
+      </providers>
+    </membership>   
+-- General example
+-WebConfig / Providers  SQLmembership Providers?
+<profile defaultProvider="DefaultProfileProvider">
+  <providers>
+    <add name="DefaultProfileProvider"
+	type="System.Web.Providers.DefaultProfileProvider, System.Web.Providers, Version=1.0.0.0,
+	Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+	connectionStringName="DefaultConnection"
+	applicationName="/" />
+  </providers>
+</profile>
+
+3) Partial Views Interaction, how to interact with the model used in the parent view || Need a tutorial/hands-on labs
+-that partial views do not run _ViewStart.cshtml (while views do 
+- How to call a partial ViewState
+A) @Html.Partial("AuthorPartial")
+B) @await Html.PartialAsync("AuthorPartial")  // Async
+C) Using Razor Syntax
+@{
+    Html.RenderPartial("AuthorPartial");
+}
+or, for Async
+@{
+	await Html.RenderPartialAsync();
+}
+
+Notes : 
+// Uses a view in current folder with this name
+// If none is found, searches the Shared folder
+@Html.Partial("ViewName")
+
+// A view with this name must be in the same folder
+@Html.Partial("ViewName.cshtml")
+
+// Locate the view based on the application root
+// Paths that start with "/" or "~/" refer to the application root
+@Html.Partial("~/Views/Folder/ViewName.cshtml")
+@Html.Partial("/Views/Folder/ViewName.cshtml")
+
+// Locate the view using relative paths
+@Html.Partial("../Account/LoginPartial.cshtml")
+
+Interaction:
+@Html.Partial("PartialName", customViewData) //ViewDataDictionary
+@Html.Partial("PartialName", viewModel)  // Model
+@Html.Partial("PartialName", viewModel, customViewData) //ViewDataDictionary and Model
+
+//Example
+Parent View
+@using PartialViewsSample.ViewModels
+@model Article
+
+<h2>@Model.Title</h2>
+@Html.Partial("AuthorPartial", Model.AuthorName)
+@Model.PublicationDate
+
+@foreach (var section in @Model.Sections)
+{
+    @Html.Partial("ArticleSection", section)
+}
+
+//The AuthorPartial (which in this case is in the /Views/Shared folder):
+@model string
+<div>
+    <h3>@Model</h3>
+    This partial view came from /Views/Shared/AuthorPartial.cshtml.<br/>
+</div>
+
+//The ArticleSection partial:
+@using PartialViewsSample.ViewModels
+@model ArticleSection
+
+<h3>@Model.Title</h3>
+<div>
+    @Model.Content
+</div>
+
+4) SignalR/ SignalR with OWIN?
+https://www.asp.net/signalr/videos/getting-started/signalr-and-web-sockets -- Videos
+https://www.asp.net/signalr/overview/getting-started/introduction-to-signalr
+https://www.asp.net/signalr/overview/getting-started/tutorial-getting-started-with-signalr
+https://www.asp.net/signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
+
+5) ViewData vs TempData
+http://www.tutorialsteacher.com/mvc/viewdata-in-asp.net-mvc
+http://www.tutorialsteacher.com/mvc/tempdata-in-asp.net-mvc
+
+https://weblogs.asp.net/scottgu/asp-net-mvc-framework-part-3-passing-viewdata-from-controllers-to-views
+
+6) MVC QueryString
+http://failedturing.blogspot.com/2014/09/microsoft-70-486-configure-state.html
+
+7) HttpHandler for GZipStreams
+public class CompressMe : IHttpHandler
+{
+	public void ProcessRequest(HttpContext context)
+	{
+		string pageEncoding = context.Request.Headers["Accept-Encoding"];
+		if (!string.IsNullOrEmpty(pageEncoding))
+		{
+			if (pageEncoding.ToLower().Contains("gzip"))
+			{
+				context.Response.AppendHeader("Content-encoding", "gzip");
+				context.Response.Filter = new GZipStream(context.Response.Filter, CompressionMode.Compress);
+			} 
+		}
+	}
+}
+
+8) SignalR for client/Server, do #4
+9) Windows Azure Role Cycle
+https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle
+http://www.codingwebapps.com/microsoft-asp-net-mvc-certification-exam-70-486-design-and-implement-the-windows-azure-role-life-cycle/
+
+10)
+//_Layout.cshtml
+@RenderSecion("SectionName", required: false)
+@RenderSecion("SideBar", required: false)
+//IndexView
+@section SideBar {
+	<p>Home Page Side Bar</p>
+	<ul>
+		<li>Link One</li>
+		<li>Link Two</li>
+		<li>Link Three</li>
+	</ul>
+}
+
+bundles.Add(New ScriptBundle("~/bundles/mybundle").Include(
+            "~/Resources/Core/Javascripts/jquery-1.7.1.min.js",
+            "~/Resources/Core/Javascripts/jquery-ui-1.8.16.min.js",
+            "~/Resources/Core/Javascripts/jquery.validate.min.js",
+            "~/Resources/Core/Javascripts/jquery.validate.unobtrusive.min.js",
+            "~/Resources/Core/Javascripts/jquery.unobtrusive-ajax.min.js",
+            "~/Resources/Core/Javascripts/jquery-ui-timepicker-addon.js"))
+
+@Scripts.Render("~/bundles/mybundle")
+
+
+@Styles.Render("~/styles/myStylesheet.css")
+
+11) Html.Action Link calling a controller/action ......
+<li>@Html.ActionLink("Home", "Index", "Home")</li>   from Layout
+12) Assert.AreEqual VS Assert.AreSame
+When you are comparing Reference Types, use Assert.AreSame
+When you are comparing Value Types, use Assert.AreEqual
+
+[TestMethod]
+public void ReferenceAndValueTypesTest()
+{
+	int firstNumber = 1;
+	int secondNumber = 1;
+	object boxedFirstNumber = firstNumber;
+	object boxedSecondNumber = secondNumber;
+
+	// There are overloads for AreEqual for various value types
+	// (assuming NUnit here)
+	Assert.AreEqual(firstNumber, secondNumber); //True
+
+	// ... but not for AreSame, as it's not intended for use with value types
+	Assert.AreSame(boxedFirstNumber, boxedSecondNumber);  //False {AreSame}
+}
+
+13) Steps for Unit Test in MVC  -- Pending
+
+14) IntelliTrace
+- IntelliTrace Events Only
+  - It Tracks ADO.NET, ASP.NET
+    Gesture/Webforms : Button.Clicked, Gridview.RowCommand, ImageButton.Clicked, LinkedButton.Clicked
+	ServiceModel : ServiceError, ServiceHosting
+	Tracing: Trace Error, Warning, Information, 
+- IntelliTrace Events and Call Information
+  - Edit and Continue is disabled
+  - Function Name
+  - Values of primitive data types passed as parameters at function entry points, and returned at function exit points.
+  - Pointers to first-lelvel child objects.
+	
+	
+https://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
+https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#auth
+
+/************************* From Tutorials *************************/
+01) On Layout HTML page, @RenderBody() is where the Views are "Rendered"
+02) ViewBag - you can pass parameters between your ViewTemplate and your Layout.
+- ViewBag is a dynamic object, which means you can put whatever you want in to it; the ViewBag object has no defined properties
+  until you put something inside it.
+ViewTemplate  
+@{
+    ViewBag.Title = "Movie List";
+}
+
+_Layout
+<title>@ViewBag.Title - Movie App</title>
+03) A view template should never perform business logic or interact with a database directly
+
