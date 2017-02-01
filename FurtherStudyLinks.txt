@@ -1,4 +1,11 @@
+Continue on
+https://www.asp.net/mvc/overview/getting-started/introduction/adding-a-new-field
+
+-------------
 https://www.asp.net/mvc/overview
 https://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
-Continue on
-https://www.asp.net/mvc/overview/getting-started/introduction/adding-a-model
+Videos
+https://www.asp.net/mvc/videos
+
+Globalization and Localization in ASP.NET Tutorial
+http://afana.me/post/aspnet-mvc-internationalization.aspx

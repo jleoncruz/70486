@@ -183,6 +183,7 @@ bundles.Add(New ScriptBundle("~/bundles/mybundle").Include(
 
 11) Html.Action Link calling a controller/action ......
 <li>@Html.ActionLink("Home", "Index", "Home")</li>   from Layout
+Do Not use <li>@Html.ActionLink("HomeController", "Index", "Home")</li>   string Controller is unnecesary
 12) Assert.AreEqual VS Assert.AreSame
 When you are comparing Reference Types, use Assert.AreSame
 When you are comparing Value Types, use Assert.AreEqual
