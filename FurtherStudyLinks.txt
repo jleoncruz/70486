@@ -1,6 +1,10 @@
 Continue on
-https://www.asp.net/mvc/overview/getting-started/introduction/adding-validation
-Using DataType Attributes
+https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+
+Getting Started with Entity Framework 6 Code First using MVC 5
+
+Section The Seed method takes the database context object as an input parameter, and the code in the method uses
+
 -------------
 https://www.asp.net/mvc/overview
 https://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
