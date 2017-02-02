@@ -235,4 +235,36 @@ ViewTemplate
 _Layout
 <title>@ViewBag.Title - Movie App</title>
 03) A view template should never perform business logic or interact with a database directly
+04) DataAnnotations / Validations : Value Types (decimal, int, float, DateTime) are inherently required, dont need the Required Attribute
+05) Do not Use Range Attribute for the DateTime Properties.
+06) Dealing with methods with Similar Name/Actions
 
+Example 1)
+// GET: Movies/Delete/5
+public ActionResult Delete(int? id)
+
+// POST: Movies/Delete/5
+[HttpPost, ActionName("Delete")]  //<-- Magic Here
+[ValidateAntiForgeryToken]
+public ActionResult DeleteConfirmed(int id)
+
+Example 2) 
+// GET: Movies/Delete/5
+public ActionResult Delete(int? id)
+
+// POST: Movies/Delete/5
+[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult Delete(FormCollection fcNotUsed, int id) //<-- Magic Here, FormCollection fcNotUsed is passed but not used
+
+public ActionResult Delete(FormCollection fcNotUsed, int id = 0)
+{
+    Movie movie = db.Movies.Find(id);
+    if (movie == null)
+    {
+        return HttpNotFound();
+    }
+    db.Movies.Remove(movie);
+    db.SaveChanges();
+    return RedirectToAction("Index");
+}

@@ -1,6 +1,6 @@
 Continue on
-https://www.asp.net/mvc/overview/getting-started/introduction/adding-a-new-field
-
+https://www.asp.net/mvc/overview/getting-started/introduction/adding-validation
+Using DataType Attributes
 -------------
 https://www.asp.net/mvc/overview
 https://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
@@ -9,3 +9,6 @@ https://www.asp.net/mvc/videos
 
 Globalization and Localization in ASP.NET Tutorial
 http://afana.me/post/aspnet-mvc-internationalization.aspx
+
+Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure App Service
+https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
