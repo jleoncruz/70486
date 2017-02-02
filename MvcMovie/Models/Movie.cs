@@ -15,6 +15,7 @@ namespace MvcMovie.Models
         public string Genre { get; set; }
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
+        public string Rating { get; set; }
     }
 
     public class MovieDBContext : DbContext
