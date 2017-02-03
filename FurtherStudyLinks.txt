@@ -1,9 +1,7 @@
 Continue on
-https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 
-Getting Started with Entity Framework 6 Code First using MVC 5
-
-Section The Seed method takes the database context object as an input parameter, and the code in the method uses
+Connection Resiliency and Command Interception with the Entity Framework in an ASP.NET MVC Application
 
 -------------
 https://www.asp.net/mvc/overview
