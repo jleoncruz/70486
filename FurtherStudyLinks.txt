@@ -1,7 +1,7 @@
 Continue on
-https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
+https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 
-Connection Resiliency and Command Interception with the Entity Framework in an ASP.NET MVC Application
+Adding an Edit Page for Instructors
 
 -------------
 https://www.asp.net/mvc/overview
@@ -14,3 +14,9 @@ http://afana.me/post/aspnet-mvc-internationalization.aspx
 
 Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure App Service
 https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+
+Entity Framework Related:
+https://msdn.microsoft.com/en-us/magazine/hh205756.aspx
+https://msdn.microsoft.com/en-us/magazine/gg309181.aspx
+
+Haydeliz 407-733-5959
