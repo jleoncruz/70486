@@ -1,7 +1,7 @@
 Continue on
-https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
+https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 
-Adding an Edit Page for Instructors
+
 
 -------------
 https://www.asp.net/mvc/overview
@@ -19,4 +19,4 @@ Entity Framework Related:
 https://msdn.microsoft.com/en-us/magazine/hh205756.aspx
 https://msdn.microsoft.com/en-us/magazine/gg309181.aspx
 
-Haydeliz 407-733-5959
+https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async
