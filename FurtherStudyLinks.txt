@@ -1,9 +1,7 @@
 Continue on
-https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/database-first-development/enhancing-data-validation
 
-
-
--------------
+-------------  Related -------------
 https://www.asp.net/mvc/overview
 https://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
 Videos
@@ -24,3 +22,6 @@ https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-
 How EF6 Enables Mocking DbSets more easily :: http://thedatafarm.com/data-access/how-ef6-enables-mocking-dbsets-more-easily/
 Testing with a mocking framework :: https://msdn.microsoft.com/en-us/data/dn314429
 Testing with your own test doubles :: https://msdn.microsoft.com/en-us/data/dn314431
+
+SignalR
+https://docs.microsoft.com/en-us/aspnet/signalr/
