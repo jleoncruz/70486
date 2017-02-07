@@ -20,3 +20,7 @@ https://msdn.microsoft.com/en-us/magazine/hh205756.aspx
 https://msdn.microsoft.com/en-us/magazine/gg309181.aspx
 
 https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async
+
+How EF6 Enables Mocking DbSets more easily :: http://thedatafarm.com/data-access/how-ef6-enables-mocking-dbsets-more-easily/
+Testing with a mocking framework :: https://msdn.microsoft.com/en-us/data/dn314429
+Testing with your own test doubles :: https://msdn.microsoft.com/en-us/data/dn314431

@@ -268,3 +268,7 @@ public ActionResult Delete(FormCollection fcNotUsed, int id = 0)
     db.SaveChanges();
     return RedirectToAction("Index");
 }
+
+DbSet.SqlQuery : Returns entity types
+Database.SqlQuery : Returns non-entity types
+Database.ExecuteSqlCommand : non-query commands
