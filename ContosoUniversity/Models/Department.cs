@@ -21,7 +21,14 @@ namespace ContosoUniversity.Models
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
+        [Display(Name = "Administrator")]
         public int? InstructorID { get; set; }
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
+        //Fluent API Equivalent
+        // modelBuilder.Entity<Department>().Property(p => p.RowVersion).IsConcurrencyToken();
 
         public virtual Instructor Administrator { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
