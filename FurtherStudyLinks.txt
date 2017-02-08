@@ -4,11 +4,9 @@ Alternate
 https://docs.microsoft.com/en-us/aspnet/mvc/
 
 Continue on
-https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#enable-migrations-create-the-database-add-sample-data-and-a-data-initializer
-[Creating a Google app for OAuth 2 to set up a Google app for OAuth2.]
-https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on#goog
+https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#using-the-membership-api
 
-Examine the Membership Data
+Deploy the app to Azure
 
 Google Project
 Project Name : 70486OAuth2
@@ -54,3 +52,9 @@ Testing with your own test doubles :: https://msdn.microsoft.com/en-us/data/dn31
 
 SignalR
 https://docs.microsoft.com/en-us/aspnet/signalr/
+
+ASP.NET Identity
+https://www.asp.net/identity/overview/features-api
+
+Securing the mvc app
+http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx
