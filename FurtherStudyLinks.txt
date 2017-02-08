@@ -1,5 +1,16 @@
+Main Tutorial Site
+https://www.asp.net/mvc/overview
+Alternate
+https://docs.microsoft.com/en-us/aspnet/mvc/
+
 Continue on
-https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/database-first-development/enhancing-data-validation
+https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#enable-migrations-create-the-database-add-sample-data-and-a-data-initializer
+[Creating a Google app for OAuth 2 to set up a Google app for OAuth2.]
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on#goog
+
+
+http://contactmanager20170207094811.azurewebsites.net
+https://localhost:44357/
 
 -------------  Related -------------
 https://www.asp.net/mvc/overview
