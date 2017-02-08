@@ -8,9 +8,27 @@ https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-a
 [Creating a Google app for OAuth 2 to set up a Google app for OAuth2.]
 https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on#goog
 
+Examine the Membership Data
+
+Google Project
+Project Name : 70486OAuth2
+Project ID : oauth2-158115
+
 
 http://contactmanager20170207094811.azurewebsites.net
 https://localhost:44357/
+
+**************Google Setup**************
+https://localhost:44357
+https://localhost:44357/signin-google
+WebClient 1
+ClientID : 132402589087-11i3bah4unruoiv07it9abic1tghk4oj.apps.googleusercontent.com
+Client Secret : pLLzv4siS1wSqB2YDOTTPhzI
+
+**************Facebook Setup**************
+App ID : 244679109313116
+App Secret : 16f67f500a29fba8ff70517a063dfc42
+
 
 -------------  Related -------------
 https://www.asp.net/mvc/overview

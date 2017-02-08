@@ -54,15 +54,15 @@ namespace ContactManager
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "244679109313116",
+               appSecret: "16f67f500a29fba8ff70517a063dfc42");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "132402589087-11i3bah4unruoiv07it9abic1tghk4oj.apps.googleusercontent.com",
+                ClientSecret = "pLLzv4siS1wSqB2YDOTTPhzI"
+            });
         }
     }
 }
