@@ -3,7 +3,7 @@ namespace ContactManager.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initAzure : DbMigration
     {
         public override void Up()
         {
@@ -49,6 +49,8 @@ namespace ContactManager.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        HomeTown = c.String(),
+                        BirthDate = c.DateTime(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

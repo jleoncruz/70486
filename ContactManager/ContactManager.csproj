@@ -202,17 +202,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702080312443_Initial.cs" />
-    <Compile Include="Migrations\201702080312443_Initial.Designer.cs">
-      <DependentUpon>201702080312443_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702082001430_Init.cs" />
-    <Compile Include="Migrations\201702082001430_Init.Designer.cs">
-      <DependentUpon>201702082001430_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702082113243_role.cs" />
-    <Compile Include="Migrations\201702082113243_role.Designer.cs">
-      <DependentUpon>201702082113243_role.cs</DependentUpon>
+    <Compile Include="Migrations\201702090218038_initAzure.cs" />
+    <Compile Include="Migrations\201702090218038_initAzure.Designer.cs">
+      <DependentUpon>201702090218038_initAzure.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -304,14 +296,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702080312443_Initial.resx">
-      <DependentUpon>201702080312443_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702082001430_Init.resx">
-      <DependentUpon>201702082001430_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702082113243_role.resx">
-      <DependentUpon>201702082113243_role.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702090218038_initAzure.resx">
+      <DependentUpon>201702090218038_initAzure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
