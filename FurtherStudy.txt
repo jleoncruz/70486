@@ -8,10 +8,22 @@ objective may include but is not limited to: implement federated authentication 
 Azure Access Control Service; create a custom security token by using Windows Identity
 Foundation; handle token formats (for example, oAuth, OpenID, LiveID, Facebook) for
 SAML and SWT tokens
+http://failedturing.blogspot.com/2016/04/microsoft-70-486-design-and-implement.html
+[https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity/]
 
 2) Design and implement Azure role lifecycle. This objective may include but is not limited
 to: identify and implement Start, Run, Stop events; Identify Startup tasks (IIS
 configuration (app pool), registry config, third party tools)
+
+[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Introduction-to-Windows-Azure-Worker-Roles-Part-1]
+[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Introduction-to-Windows-Azure-Worker-Roles-Part-2]
+[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle]
+
+[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Concepts-Part-1]
+[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Concepts-Part-2]
+
+http://failedturing.blogspot.com/2014/06/microsoft-70-486-design-and-implement.html
+
 
 3) Configure state management. This objective may include but is not limited to: choose a
 state management mechanism (in-process and out of process state management,
@@ -22,7 +34,8 @@ QueryString)
 
 Partial Created List, (created after the second try)   Need a tutorial/hands-on labs
 1) IClaims/IPrincipal?
-   - claims.Type?
+   - Claim.ClaimType == string
+   - Claim.Right == string
    - claims.Value?
 2) SQLMembership provider configuration
     <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="15">

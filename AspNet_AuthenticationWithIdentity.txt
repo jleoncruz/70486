@@ -1,0 +1,12 @@
+https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity/01
+
+IdentityUser  ::  IUser
+EmailService, SmsService :: IIdentityMessageService -- 2Factor Authentication
+UserManagwer - APIS to CRUD user, claim, auth info via UserStore
+RoleManager - APIS to CRUD roles via RoleStore
+UserStore - talks to data store to store user, user login providers, user claims, user roles
+  IUserStore, IUserLoginStore, IUserClaimStore, IUserRoleStore
+RoleStore - Talks to the data store to store roles.
+SigninManager
+
+Minute 25:43
