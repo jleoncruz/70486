@@ -4,7 +4,8 @@ Alternate
 https://docs.microsoft.com/en-us/aspnet/mvc/
 
 Continue on
-https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#using-the-membership-api
+https://docs.microsoft.com/en-us/azure/app-service-web/websites-dotnet-webjobs-sdk-get-started
+Create a .NET WebJob in Azure App Service
 
 Deploy the app to Azure
 
