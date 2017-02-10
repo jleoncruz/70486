@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{9BBBA709-3C32-47AE-858C-D886E518E912}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoSite", "ContosoSite\ContosoSite.csproj", "{CB63AB3A-F5D0-4D10-BDF1-F2A5F02E781E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "ContactManager\ContactManager.csproj", "{3CDA7F39-0FB8-4D10-B28F-D9631FB3379E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTemplate", "BasicTemplate\BasicTemplate.csproj", "{1D82580A-F1F6-4F98-ABF2-742135237B1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{3CDA7F39-0FB8-4D10-B28F-D9631FB3379E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CDA7F39-0FB8-4D10-B28F-D9631FB3379E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CDA7F39-0FB8-4D10-B28F-D9631FB3379E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

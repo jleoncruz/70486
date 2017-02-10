@@ -1,4 +1,9 @@
-https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity/01
+Customizing ASPNET Authentication with Identity
+https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity
+
+Current module
+https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity/02
+
 
 IdentityUser  ::  IUser
 EmailService, SmsService :: IIdentityMessageService -- 2Factor Authentication
@@ -7,6 +12,7 @@ RoleManager - APIS to CRUD roles via RoleStore
 UserStore - talks to data store to store user, user login providers, user claims, user roles
   IUserStore, IUserLoginStore, IUserClaimStore, IUserRoleStore
 RoleStore - Talks to the data store to store roles.
-SigninManager
+SigninManager - you call this to sign-in a user
+ApplicationUserManager -- you call this to manage users, Talks to UserStore
 
-Minute 25:43
+Minute 1:05
