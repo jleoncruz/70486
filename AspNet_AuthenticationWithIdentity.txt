@@ -15,4 +15,9 @@ RoleStore - Talks to the data store to store roles.
 SigninManager - you call this to sign-in a user
 ApplicationUserManager -- you call this to manage users, Talks to UserStore
 
-Minute 1:05
+
+Create a new Web(MVC) Project (LocalUsers)
+1) run the app
+2) register a new user local(localdb)
+3) PM Console, enable-migrations
+Minute 7:46
