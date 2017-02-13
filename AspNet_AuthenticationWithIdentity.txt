@@ -2,7 +2,7 @@ Customizing ASPNET Authentication with Identity
 https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity
 
 Current module
-https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity/02
+https://channel9.msdn.com/Series/Customizing-ASPNET-Authentication-with-Identity/06
 
 
 IdentityUser  ::  IUser
@@ -15,9 +15,72 @@ RoleStore - Talks to the data store to store roles.
 SigninManager - you call this to sign-in a user
 ApplicationUserManager -- you call this to manage users, Talks to UserStore
 
+- IdentityUser is typically for an EF implementation
+- ApplicationUserStore is an EF implementation
+- Default user fields are based on ApplicationUser : IdentityUser
+  (add to this class or create you own new one)
+- All other Identity tables have a backing class EF is initialized with
+ - Change context's OnModelCreating to look at custom classes  
 
-Create a new Web(MVC) Project (LocalUsers)
-1) run the app
-2) register a new user local(localdb)
-3) PM Console, enable-migrations
-Minute 7:46
+
+public class IdentityUserClaim
+{
+	public virtual string ClaimType { get; set; }
+	public virtual string ClaimValue  { get; set; }
+}
+
+x.Provider = new FacebookAuthenticationProvider()
+{
+	OnAuthenticated = async context =>
+	{
+		context.Identity.AddClaim(
+		  new System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken));
+	}
+}
+
+-- OAuth
+1) Microsoft - OAuth2
+2) Google - OAuth2
+3) Facebook - OAuth2
+4) Twitter = OAuth1
+5) AAD (Azure Active Directory)
+  - OpenID Connect (OAuth2)
+  - OAuth2 Bearer / JSON Web Tokens (JWT)
+  
+  Directory:   juanleon00hotmail  (juanleon00hotmail.onmicrosoft.com)
+  
+  Name:70486NewUser
+  UserName: 70486NewUser@Contoso.com
+  
+  jleoncruz@gmail.com
+  Cacatua!01
+  
+-- Two factor authentication
+- 2 spearate methods of verification/identification
+Creadit Card -- Pin + Zip Code
+Websites -- Image + Login/Password
+
+public class SmsService : IIdentityMessageService
+{
+	public Task SendAsync(IdentityMessage message)
+	{
+		//Plug in your SMS Service here to send a text message
+		return Task.FromResult(0);
+	}
+}
+  
+  Twilio SmsService -- NuGet Package
+  Using Google Authenticator with ASP.NET Identity
+  
+
+Migration
+
+-- Beyond Compare, comparison tool
+
+Identity Best Practices
+1) Always use SSL
+- Yes, even the login page needs SSL
+2) Enforce a strong password policy
+3) Use Xsrf tokens everywhere for post methods
+4) Do not allow for unlimited login attempts
+5) Consider shortening OnValidateIdentity times to expire sessions

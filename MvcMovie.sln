@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{9BBBA709-3C32-47AE-858C-D886E518E912}"
 EndProject
@@ -14,6 +14,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "ContactManager\ContactManager.csproj", "{3CDA7F39-0FB8-4D10-B28F-D9631FB3379E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTemplate", "BasicTemplate\BasicTemplate.csproj", "{1D82580A-F1F6-4F98-ABF2-742135237B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalUsers", "LocalUsers\LocalUsers.csproj", "{33AFAC2C-84DD-4863-8D1B-0193EAC0813B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTwoFactor", "BasicTwoFactor\BasicTwoFactor.csproj", "{F99AF5C2-86FC-4435-9DDE-D15F904BA386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestPractices1", "BestPractices1\BestPractices1.csproj", "{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +53,18 @@ Global
 		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D82580A-F1F6-4F98-ABF2-742135237B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33AFAC2C-84DD-4863-8D1B-0193EAC0813B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AFAC2C-84DD-4863-8D1B-0193EAC0813B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AFAC2C-84DD-4863-8D1B-0193EAC0813B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AFAC2C-84DD-4863-8D1B-0193EAC0813B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F99AF5C2-86FC-4435-9DDE-D15F904BA386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99AF5C2-86FC-4435-9DDE-D15F904BA386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99AF5C2-86FC-4435-9DDE-D15F904BA386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99AF5C2-86FC-4435-9DDE-D15F904BA386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
