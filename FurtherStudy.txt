@@ -15,12 +15,14 @@ http://failedturing.blogspot.com/2016/04/microsoft-70-486-design-and-implement.h
 to: identify and implement Start, Run, Stop events; Identify Startup tasks (IIS
 configuration (app pool), registry config, third party tools)
 
+
+*[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle]
 [https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Introduction-to-Windows-Azure-Worker-Roles-Part-1]
 [https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Introduction-to-Windows-Azure-Worker-Roles-Part-2]
-[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle]
 
 [https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Concepts-Part-1]
 [https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Concepts-Part-2]
+[https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-dotnet-diagnostics]
 
 http://failedturing.blogspot.com/2014/06/microsoft-70-486-design-and-implement.html
 
@@ -285,3 +287,43 @@ public ActionResult Delete(FormCollection fcNotUsed, int id = 0)
 DbSet.SqlQuery : Returns entity types
 Database.SqlQuery : Returns non-entity types
 Database.ExecuteSqlCommand : non-query commands
+
+
+https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle
+Cloud Service
+ - Web Role (VM Machines)
+ - Worker Roles (VM Machines)
+ 
+On the VM
+ - RoleEntryPoint implementation is loaded
+ - OnStart() is called 
+ - Run() is called
+ - Optional for Web Roles, Required for Worker Roles
+ 
+StartUp Task -- windows process your virtual machine launches before it starts your role instance
+Types
+1) Simple     -- System waits to "exit" before any other task can be launch
+2) Background -- System does not wait the task to "exit"
+3) Foreground -- Similar to background, except role is not restarted until all foreground "exit"
+
+Task can be any windows executable or bath script
+--
+Limited privilege or admin privilige.
+
+//OnStart Example
+public override bool OnStart()
+{
+	// Set the maximum number of concurrent connections
+	ServicePointManager.DefaultConnectionLimit = 12;
+
+	// For information on handling configuration changes
+	// see the MSDN topic at https://go.microsoft.com/fwlink/?LinkId=166357.
+
+	bool result = base.OnStart();
+
+	Trace.TraceInformation("WorkerRole1 has been started");
+
+	return result;
+}
+
+

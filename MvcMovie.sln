@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{9BBBA709-3C32-47AE-858C-D886E518E912}"
 EndProject
@@ -20,6 +20,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTwoFactor", "BasicTwoFactor\BasicTwoFactor.csproj", "{F99AF5C2-86FC-4435-9DDE-D15F904BA386}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestPractices1", "BestPractices1\BestPractices1.csproj", "{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WorkerRoleSample", "WorkerRoleSample\WorkerRoleSample.ccproj", "{BEE2EA4F-7A6F-4903-8541-EA089E62EF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerRole1", "WorkerRole1\WorkerRole1.csproj", "{F0B68CAF-D8DE-409B-AC3D-4154363E4E2E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92D0718B-C768-4AE5-B4BC-FEF26953B64C} = {92D0718B-C768-4AE5-B4BC-FEF26953B64C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppForWorkerRoleSample", "ConsoleAppForWorkerRoleSample\ConsoleAppForWorkerRoleSample.csproj", "{92D0718B-C768-4AE5-B4BC-FEF26953B64C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +74,18 @@ Global
 		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B88F188-0B0C-40F5-8B83-58E07A6D85F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE2EA4F-7A6F-4903-8541-EA089E62EF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE2EA4F-7A6F-4903-8541-EA089E62EF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE2EA4F-7A6F-4903-8541-EA089E62EF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE2EA4F-7A6F-4903-8541-EA089E62EF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B68CAF-D8DE-409B-AC3D-4154363E4E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B68CAF-D8DE-409B-AC3D-4154363E4E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B68CAF-D8DE-409B-AC3D-4154363E4E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B68CAF-D8DE-409B-AC3D-4154363E4E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D0718B-C768-4AE5-B4BC-FEF26953B64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D0718B-C768-4AE5-B4BC-FEF26953B64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D0718B-C768-4AE5-B4BC-FEF26953B64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D0718B-C768-4AE5-B4BC-FEF26953B64C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
