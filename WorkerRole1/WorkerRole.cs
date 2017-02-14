@@ -17,45 +17,30 @@ namespace WorkerRole1
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
 
-        //public override void Run()
-        //{
-        //    Trace.TraceInformation("Custom WorkerRole1 is running");
-
-        //    try
-        //    {
-        //        this.RunAsync(this.cancellationTokenSource.Token).Wait();
-        //    }
-        //    finally
-        //    {
-        //        this.runCompleteEvent.Set();
-        //    }
-        //}
-
         public override void Run()
         {
-            Trace.WriteLine("Run() Called", "Information");
+            Trace.TraceInformation("Custom WorkerRole1 is running");
 
-            while(true)
+            try
             {
-                Thread.Sleep(10000);
-                Trace.WriteLine("Working", "Information");
+                this.RunAsync(this.cancellationTokenSource.Token).Wait();
             }
-            //base.Run();
+            finally
+            {
+                this.runCompleteEvent.Set();
+            }
         }
 
-        //public override bool OnStart()
+        //public override void Run()
         //{
-        //    // Set the maximum number of concurrent connections
-        //    ServicePointManager.DefaultConnectionLimit = 12;
+        //    Trace.WriteLine("Run() Called", "Information");
 
-        //    // For information on handling configuration changes
-        //    // see the MSDN topic at https://go.microsoft.com/fwlink/?LinkId=166357.
-
-        //    bool result = base.OnStart();
-
-        //    Trace.TraceInformation("WorkerRole1 has been started");
-
-        //    return result;
+        //    while (true)
+        //    {
+        //        Thread.Sleep(10000);
+        //        Trace.WriteLine("Working", "Information");
+        //    }
+        //    //base.Run();
         //}
 
         public override bool OnStart()
@@ -66,8 +51,23 @@ namespace WorkerRole1
             // For information on handling configuration changes
             // see the MSDN topic at https://go.microsoft.com/fwlink/?LinkId=166357.
 
-            return base.OnStart();
+            bool result = base.OnStart();
+
+            Trace.TraceInformation("WorkerRole1 has been started");
+
+            return result;
         }
+
+        //public override bool OnStart()
+        //{
+        //    // Set the maximum number of concurrent connections
+        //    ServicePointManager.DefaultConnectionLimit = 12;
+
+        //    // For information on handling configuration changes
+        //    // see the MSDN topic at https://go.microsoft.com/fwlink/?LinkId=166357.
+
+        //    return base.OnStart();
+        //}
 
         public override void OnStop()
         {

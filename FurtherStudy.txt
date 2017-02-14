@@ -16,7 +16,10 @@ to: identify and implement Start, Run, Stop events; Identify Startup tasks (IIS
 configuration (app pool), registry config, third party tools)
 
 
-*[https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle]
+*https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle
+https://channel9.msdn.com/posts/Windows-Azure-Jump-Start-03-Windows-Azure-Lifecycle-Part-1
+https://channel9.msdn.com/posts/Windows-Azure-Jump-Start-04-Windows-Azure-Lifecycle-Part-2
+----------------------------------------------------------------------------------------------------------
 [https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Introduction-to-Windows-Azure-Worker-Roles-Part-1]
 [https://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Introduction-to-Windows-Azure-Worker-Roles-Part-2]
 
@@ -325,5 +328,34 @@ public override bool OnStart()
 
 	return result;
 }
+
+- Why Startup Tasks
+1) Customize your Virtual Machines
+2) Host long-running processes
+
+- Worker Role Lifecycle
+--------------------------
+- WaHostBootStrapper
+-- Startup Tasks
+-- WaWorkerHost
+--- RoleEntryPoint
+--- OnStart()
+--- Run()
+
+
+- Web Role Lifecycle
+--------------------------
+- WaHostBootStrapper
+-- IISConfigurator        : IISConfigurator is called both before and after your startup tasks. Your Applications pools are configured AFTER yout
+                            Your Applications pools are configured AFTER your startup tasks.
+-- Startup Tasks 
+-- WaIISHost
+--- RoleEntryPoint
+--- OnStart()
+--- Run()
+-- W3WP
+
+
+
 
 
