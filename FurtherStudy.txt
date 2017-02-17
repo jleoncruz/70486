@@ -360,6 +360,4 @@ Pluralsight -- MVC 4 Routing
 MapRoute
  - Friendly name for the route
  - a pattern for the route
- - parameters for the route.
-
-
+ - parameters for the route
