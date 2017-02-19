@@ -1,0 +1,79 @@
+﻿@model IPagedList<Restaurant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@*@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <p>
+            Name Filtering : @Html.TextBox("name")
+        </p>
+        <p>
+            <input value="SearchByName" type="submit" />
+        </p>
+    }*@
+
+<form method="get" action="@Url.Action("Index")"
+      data-otf-ajax="true" data-otf-target="#restaurantList">
+    <input type="search" name="name" data-otf-autocomplete="@Url.Action("Autocomplete")" />
+    <input type="submit" value="Search By Name" />
+</form>
+
+@*@using (Ajax.BeginForm(
+        new AjaxOptions
+        {
+            HttpMethod = "get",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "restaurantList"
+        }))
+    {
+        <input type="search" name="name" />
+        <input type="submit" value="Search By Name" />
+    }*@
+
+@Html.Partial("_Restaurants", Model)
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>*@

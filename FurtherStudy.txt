@@ -361,3 +361,81 @@ MapRoute
  - Friendly name for the route
  - a pattern for the route
  - parameters for the route
+ 
+Pluralsight -- Bootstrap and MVC5
+ - Columns available = 12
+ col-md-4 = column | medium | 4 units
+ 
+ <div class="col-md-3 col-md-push-9">
+ </div>
+ 
+
+@media (min-width: 992px) {
+	/* Styles for medium devices */
+}
+
+Category    || Width
+Extra small || <   768px
+Small       || >=  768px
+Medium      || >=  992px
+Large       || >= 1200px
+
+Page Inspector|| Web Essentials
+
+Dynamic vs Strngly Typed Views
+
+3 ways to pass information from the controller to the view.
+1) strongly typed model
+2) dynamic type (using @model dynamic)
+3) Using the ViewBag
+
+-- Ajax with ASP.NET MVC (4+) / Pluralsight
+
+@Ajax.BeginForm
+@Ajax.ActionLink
+Client Validation
+
+-- SignalR and MVC Applications
+
+WebSocket API
+
+//var socket = new WebSocket("wss://echo.websocket.org")  //Secure Web Sockets
+var socket = new WebSocket("ws://echo.websocket.org");
+
+//once connection opens
+socket.send("Hello, there!");
+
+//server sent me a message
+socket.onmessage = function(event) {
+	alert("I got data! " + event.data);
+}
+
+//Nuget Package
+Install-Package Microsoft.AspNet.SignalR
+//Connections
+-WebSockets
+-Server Sent Events (SSE)
+-Forever Frame
+-Long Polling
+
+
+//Server Component
+public class CharHub : Hub
+{
+	public void Send(string name, string message)
+	{
+		//Call the roadcastMessage methof to update clients.
+		Clients.All.broadcastMessage(name, message);
+	}
+}
+
+//Client Component
+$('#sendmessage').click(function (){
+	//Call the Send method on the hub.
+	chat.server.send($('#displayname').val(), $('#message').val());
+	
+	//Clear text box and reset focus for the next comment.
+	$('#message').val('').focus();
+});
+
+// Clients.All Dynamic Object
