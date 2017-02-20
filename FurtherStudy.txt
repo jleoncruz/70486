@@ -420,7 +420,7 @@ Install-Package Microsoft.AspNet.SignalR
 
 
 //Server Component
-public class CharHub : Hub
+public class ChatHub : Hub
 {
 	public void Send(string name, string message)
 	{
@@ -439,3 +439,97 @@ $('#sendmessage').click(function (){
 });
 
 // Clients.All Dynamic Object
+
+
+Next -- http://pluralsight.com/training/Player?author=scott-allen&name=mvc4-building-m8-infrastructure&mode=live&clip=0&course=mvc4-building
+MVC 4 Video: ASP.NET Infrastructure
+
+-- Output Caching
+-- Localization / Globalization
+-- Diagnostics
+
+
+-- Output Caching
+ - [OutputCache] action filter
+ 
+ public class CachedController : Controller
+ {
+	 [OutputCache(Duration=60, VaryByParam="none")] // Duration in seconds
+	 public ActionResilt Index()
+	 {
+		 return View();
+	 }
+ }
+ 
+---VaryByParam
+1) VaryBy "*" to cache for every permutation of all parameters 
+2) VaryBy "none" to always cache the same content
+3) VaryBy "name" to cache for every value of name parameter
+--Location
+Cache on server, client, client and server
+--VaryByHeader
+Vary on an HTTP Header, like Accept-Language
+--VaryByCustom
+Implemenation custom method in global.asax
+--SqlDependency
+Cache until data in a SQL Server table changes
+
+
+------Cache Profiles
+[OutputCache(CacheProfile="Aggresive", VaryByParam="firstName")]
+public ActionResult Index(string firstName)
+{
+	///....
+	return View();
+}
+
+//WebConfig
+<caching>
+	<outputCacheSettings>
+		<outputCacheProfiles>
+			<add name="Aggresive" duration="300" />
+			<add name="Mild" duration="10" />
+		</outputCacheProfiles>
+	</outputCacheSettings>
+</caching>
+
+Localization & Culture
+- Thread.CurrentCulture property impacts formatting
+-- Example DateTime.Now.ToString()
+
+- Thread.CurrentUICulture property impacts resource loading
+
+ASP.NET can set cultures according to HTTP Headers
+ - Accept-Language Header
+ - Use <globalization> section in web.config
+ 
+ <system.web>
+ <globalization culture="auto" uiCulture="auto" />
+ ...
+ </system.web>
+ 
+ Resources - 
+ 
+ also works with Data Annotations
+ 
+ [Required(ErrorMessageResourceType=typeof(MainAssemblyName.Views.Home.Resources), ErrorMessageResourceName="Greetings"]
+ 
+ 
+--Diagnostics
+Logging Options
+ 1) ASP.NET Health Monitoring
+ 2) log4net
+ 3) elmah
+ 4) P&P Application Logging Block
+ 
+ XML/WebConfig
+ 
+ <healthMonitoring enabled="true">
+	<rules>
+		<add name="All Events" eventName="All Events" provider="SqlWebEventProvider" />
+	</rules>
+ </healthMonitoring>
+ 
+ 
+ Next Unit Testing with MVC Framework
+ https://app.pluralsight.com/player?author=scott-allen&name=mvc4-building-m9-tests&mode=live&clip=0&course=mvc4-building

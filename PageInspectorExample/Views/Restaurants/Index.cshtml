@@ -24,7 +24,7 @@
 
 <form method="get" action="@Url.Action("Index")"
       data-otf-ajax="true" data-otf-target="#restaurantList">
-    <input type="search" name="name" data-otf-autocomplete="@Url.Action("Autocomplete")" />
+    <input type="search" name="searchTerm" data-otf-autocomplete="@Url.Action("Autocomplete")" />
     <input type="submit" value="Search By Name" />
 </form>
 
@@ -39,6 +39,22 @@
         <input type="search" name="name" />
         <input type="submit" value="Search By Name" />
     }*@
+
+@{
+    var amount = 10.0m;
+    var someDate = new DateTime(2002, 7, 9);
+}
+
+<div>
+    @PageInspectorExample.Views.Restaurants.Resources.Greeting
+</div>
+
+<div>
+    @amount.ToString("c")
+</div>
+<div>
+    @someDate.ToShortDateString()
+</div>
 
 @Html.Partial("_Restaurants", Model)
 

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PageInspectorExample.Models;
 using PagedList;
+using System.Web.UI;
 
 namespace PageInspectorExample.Controllers
 {
@@ -36,32 +37,55 @@ namespace PageInspectorExample.Controllers
 
         //[HttpPost]
         //[ActionName("Index")]
-        public ActionResult Index(string name = null, int page = 1)
+        [OutputCache(CacheProfile = "Long", VaryByHeader = "X-Requested-With;Accept-Language", Location = OutputCacheLocation.Server)]
+        public ActionResult Index(string searchTerm = null, int page = 1)
         {
-            if (!string.IsNullOrEmpty(name))
+            //IPagedList<Restaurant> dbQ;
+            //if (!string.IsNullOrEmpty(searchTerm))
+            //{
+            //    dbQ = (from list in db.Restaurants
+            //           where list.Name.StartsWith(searchTerm)
+            //           //where name.Contains(list.Name)
+            //           orderby list.ID
+            //           select list)
+            //              .ToPagedList(page, 10);
+            //}
+            //else
+            //{
+            //    dbQ = db.Restaurants
+            //       .OrderBy(r => r.ID)
+            //       .ToPagedList(page, 10);
+            //}
+
+            //if (Request.IsAjaxRequest())
+            //{
+            //    return PartialView("_Restaurants", dbQ);
+            //}
+
+            //return View(dbQ);
+
+            var model =
+                db.Restaurants
+                .OrderBy(r => r.ID)
+                .Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
+                .ToPagedList(page, 10);
+            //.Select(r => new RestaurantListViewModel
+            //{
+            //    Id = r.Id,
+            //    Name = r.Name,
+            //    City = r.City,
+            //    Country = r.Country,
+            //    CountOfReviews = r.Reviews.Count()
+            //}).ToPagedList(page, 10);
+
+            ViewBag.CurrentFilter = searchTerm;
+
+            if (Request.IsAjaxRequest())
             {
-                var dbQ = (from list in db.Restaurants
-                           where list.Name.StartsWith(name)
-                           //where name.Contains(list.Name)
-                           orderby list.ID
-                           select list)
-                           .ToPagedList(page, 10);
-
-                if (Request.IsAjaxRequest())
-                {
-                    return PartialView("_Restaurants", dbQ);
-                }
-
-                return View(dbQ);
+                return PartialView("_Restaurants", model);
             }
-            {
 
-                var dbQ = db.Restaurants
-                    .OrderBy(r => r.ID)
-                    .ToPagedList(page, 10);
-
-                return View(dbQ);
-            }
+            return View(model);
         }
 
         // GET: Restaurants/Details/5

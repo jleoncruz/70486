@@ -1,5 +1,4 @@
-﻿
-$(function () {
+﻿$(function () {
 
     var ajaxFormSubmit = function () {
         var $form = $(this);
@@ -31,6 +30,7 @@ $(function () {
 
     var createAutocomplete = function () {
         var $input = $(this);
+
         var options = {
             source: $input.attr("data-otf-autocomplete"),
             select: submitAutocompleteForm
@@ -48,15 +48,14 @@ $(function () {
             type: "get"
         };
 
-        //console.log(data);
         //alert(options.data);
 
         $.ajax(options).done(function (data) {
             var target = $a.parents("div.pagedList").attr("data-otf-target");
             $(target).replaceWith(data);
         });
-
         return false;
+
     };
 
     $("form[data-otf-ajax='true']").submit(ajaxFormSubmit);

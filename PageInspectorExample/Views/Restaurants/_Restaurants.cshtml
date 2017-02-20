@@ -3,8 +3,12 @@
 <div id="restaurantList">
 
     <div class="pagedList" data-otf-target="#restaurantList">
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
-       PagedListRenderOptions.MinimalWithItemCountText)
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchTerm = ViewBag.CurrentFilter }),
+       PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+       {
+           HttpMethod = "GET",
+           UpdateTargetId = "restaurantList"
+       }))
     </div>
 
     @foreach (var item in Model)
