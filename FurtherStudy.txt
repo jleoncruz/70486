@@ -1,3 +1,13 @@
+http://failedturing.blogspot.com/2016/05/microsoft-exam-70-486-study-guide.html
+Develop the user experience
+
+Next :
+Control application behavior by using MVC extensibility points 
+http://failedturing.blogspot.com/2015/12/microsoft-70-486-control-application.html
+-->
+    
+
+
 Recommendation from last results:
 
 https://www.asp.net/mvc/overview
@@ -39,9 +49,10 @@ QueryString)
 
 Partial Created List, (created after the second try)   Need a tutorial/hands-on labs
 1) IClaims/IPrincipal?
-   - Claim.ClaimType == string
-   - Claim.Right == string
-   - claims.Value?
+   - Claim.Type == The Type property provides the semantic content of the claim, that is, it states what the claim is about.
+    GivenName (“http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname”)
+   - Claim.Value == The value of a claim is represented only as a string.
+   - Claim.ValueType == contains a string that identifies the type information of the value.
 2) SQLMembership provider configuration
     <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="15">
       <providers>
@@ -346,7 +357,7 @@ public override bool OnStart()
 - Web Role Lifecycle
 --------------------------
 - WaHostBootStrapper
--- IISConfigurator        : IISConfigurator is called both before and after your startup tasks. Your Applications pools are configured AFTER yout
+-- IISConfigurator        : IISConfigurator is called both before and after your startup tasks.
                             Your Applications pools are configured AFTER your startup tasks.
 -- Startup Tasks 
 -- WaIISHost
@@ -382,7 +393,7 @@ Large       || >= 1200px
 
 Page Inspector|| Web Essentials
 
-Dynamic vs Strngly Typed Views
+Dynamic vs Strongly Typed Views
 
 3 ways to pass information from the controller to the view.
 1) strongly typed model
@@ -533,3 +544,20 @@ Logging Options
  
  Next Unit Testing with MVC Framework
  https://app.pluralsight.com/player?author=scott-allen&name=mvc4-building-m9-tests&mode=live&clip=0&course=mvc4-building
+ 
+ 
+ Pluralsight ASP.NET MVC 5 Fundamentals | Identity and Security | Third Party Claims
+ 
+ var result = await AuthenticationManager.AuthenticateAsync(DefaultAuthenticationTypes.ExternalCookie);
+ 
+ //result.Identity  == System.Security.Claims.ClaimsIdentity
+ result.Identity
+ 
+ result.Identity.Claims  = List of Strings   
+  //example Google
+  // {claims/nameidentifier} {claims/givenname} {claims/surname} {claims/name} {claims/emailaddress}
+ result.Identity.NameClaimType = string
+ result.Identity.RoleClaimType = string
+ 
+ 
+ 

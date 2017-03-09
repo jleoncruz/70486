@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace OdeToFood.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         IOdeToFoodDb _db;
@@ -38,7 +38,7 @@ namespace OdeToFood.Controllers
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
-        [OutputCache(CacheProfile = "Long", VaryByHeader = "X-Requested-With;Accept-Language", Location = OutputCacheLocation.Server)]
+        [OutputCache(CacheProfile = "Short", VaryByHeader = "X-Requested-With;Accept-Language", Location = OutputCacheLocation.Server)]
         public ActionResult Index(string searchTerm = null, int page = 1)
         {
             var greeting = OdeToFood.Views.Home.Resources.Greeting;
@@ -48,13 +48,13 @@ namespace OdeToFood.Controllers
                    .OrderByDescending(r => r.Reviews.Average(review => review.Rating))
                    .Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
                    .Select(r => new RestaurantListViewModel
-                            {
-                                Id = r.Id,
-                                Name = r.Name,
-                                City = r.City,
-                                Country = r.Country,
-                                CountOfReviews = r.Reviews.Count()
-                            }).ToPagedList(page, 10);
+                   {
+                       Id = r.Id,
+                       Name = r.Name,
+                       City = r.City,
+                       Country = r.Country,
+                       CountOfReviews = r.Reviews.Count()
+                   }).ToPagedList(page, 10);
 
             ViewBag.MailServer = ConfigurationManager.AppSettings["MailServer"];
 
@@ -65,7 +65,6 @@ namespace OdeToFood.Controllers
 
             return View(model);
         }
-
 
         public ActionResult About()
         {

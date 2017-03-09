@@ -27,10 +27,16 @@ namespace OdeToFood.Migrations
                    City = "Gothenburg",
                    Country = "Sweden",
                    Reviews =
-                       new List<RestaurantReview> { 
+                       new List<RestaurantReview> {
                        new RestaurantReview { Rating = 9, Body="Great food!", ReviewerName="Scott" }
                    }
                });
+
+            for (int i = 0; i < 1000; i++)
+            {
+                context.Restaurants.AddOrUpdate(r => r.Name,
+                    new Restaurant { Name = i.ToString(), City = "Nowhere", Country = "USA" });
+            }
 
             SeedMembership();
         }
@@ -57,7 +63,7 @@ namespace OdeToFood.Migrations
             if (!roles.GetRolesForUser("sallen").Contains("Admin"))
             {
                 roles.AddUsersToRoles(new[] { "sallen" }, new[] { "admin" });
-            } 
+            }
         }
     }
 }
